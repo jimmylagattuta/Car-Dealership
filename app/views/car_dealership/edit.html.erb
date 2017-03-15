@@ -1,0 +1,25 @@
+<h1> Edit Car </h1>
+<%= form_tag "/cars/#{@car.id}", method: :patch do %>
+<br>
+	Make: <input type="text" name="car_make" value="<%= @car.make %>">
+<br>	
+	Model: <input type="text" name="car_model" value="<%= @car.model %>">
+<br>
+	Color: <input type="text" name="car_color" value="<%= @car.color %>">
+<br>
+	Image: <input type="text" name="car_image" value="<%= @car.image %>">
+<br>
+	Price: <input type="text" name="car_price" value="<%= @car.price %>">
+<br>
+	Year: <input type="text" name="car_year" value="<%= @car.year %>">
+<br>
+	Milage: <input type="text" name="car_milage" value="<%= @car.milage %>">
+<br>
+	Amenities: <input type="text" name="car_amenities" value="<%= @car.amenities %>">
+<br>
+	Financing: <input type="text" name="car_financing" value="<%= @car.financing %>">
+<br>
+	Previous Owners: <input type="text" name="car_previous_owners" value="<%= @car.previous_owners %>">
+<br>
+<input type="submit" value="edit_car">
+<% end %>

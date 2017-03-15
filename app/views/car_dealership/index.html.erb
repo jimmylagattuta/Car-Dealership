@@ -1,0 +1,9 @@
+<h1> Take a look at our Inventory: </h1>
+<% @cars.each do |car| %>
+<div>
+<a href= "http://localhost:3000/cars/<%=car.id%>"> <%= car.year.to_s + " " + car.make + " " + car.model %> </a>
+</div>
+<% end %>
+<br>
+<br>
+<%= button_to "New car", "/cars/new", method: :get %>

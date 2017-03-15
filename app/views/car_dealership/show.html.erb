@@ -1,0 +1,17 @@
+<h1> Car for Sale: <%= @car.make %> </h1>
+<ul>
+	<% @car.amenities_split.each do |amenity| %>
+		<li> <%= amenity %> </li>
+	<% end %>
+</ul>
+
+<p> 
+<%= @car.car_full_name %>
+</p>
+<%= @car.friendly_time %>
+
+<br>
+<br>
+
+<%= button_to "Edit Car", "/cars/#{@car.id}/edit", method: :get %>
+<%= button_to "Car Sold", "/cars/#{@car.id}", method: :delete %>

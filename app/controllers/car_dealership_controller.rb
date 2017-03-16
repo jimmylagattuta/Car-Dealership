@@ -28,7 +28,9 @@ class CarDealershipController < ApplicationController
 		input_amenities = params[:car_amenities]
 		input_financing = params[:car_financing]
 		input_previous_owners = params[:car_previous_owners]
-		@car_add = CarInventory.create(make: input_make, model: input_model, color: input_color, image: input_image, price: input_price, year: input_year, milage: input_milage, amenities: input_amenities, financing: input_financing, previous_owners: input_previous_owners)
+		input_origin = params[:car_origin]
+		input_bio = params[:car_bio]
+		@car_add = CarInventory.create(make: input_make, model: input_model, color: input_color, image: input_image, price: input_price, year: input_year, milage: input_milage, amenities: input_amenities, financing: input_financing, previous_owners: input_previous_owners, origin: input_origin, bio: input_bio)
 	end
 
 	def edit
@@ -48,6 +50,8 @@ class CarDealershipController < ApplicationController
 		@car.amenities = params[:car_amenities]
 		@car.financing = params[:car_financing]
 		@car.previous_owners = params[:car_previous_owners]
+		@car.origin = params[:car_origin]
+		@car.bio = params[:car_bio]
 		@car.save
 
 		redirect_to "/cars/#{@car.id}"
